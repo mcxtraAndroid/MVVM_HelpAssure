@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.fbd.mcxtra.viewmodel.SignInViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:id="@+id/mobileLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_20sdp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/signin_bg"
+            android:text="Enter your Phone Number"
+            android:textSize="@dimen/_14sdp"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="130dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="Enter your Phone Number"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="normal|bold"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="130dp" />
+
+        <EditText
+            android:id="@+id/etCode"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:ems="10"
+            app:binding="@{vm.countryCode}"
+            android:backgroundTint= "@color/dark_greycolor"
+            android:focusable="false"
+            android:hint="+91"
+            android:inputType="textPersonName"
+            android:text="+91"
+            android:textSize="@dimen/_14sdp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="171dp" />
+
+        <EditText
+            android:id="@+id/et_Mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_toRightOf="@id/etCode"
+            android:ems="10"
+            android:backgroundTint= "@color/dark_greycolor"
+            android:afterTextChanged="@{(editable) -> vm.mobileNoValidator(editable, model)}"
+            app:binding="@{vm.mobileNumber}"
+            android:hint="Mobile No"
+            android:inputType="number"
+            android:textSize="@dimen/_14sdp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="171dp" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_below="@+id/et_Mobile"
+            android:layout_marginBottom="@dimen/_7sdp"
+
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/cbCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"></CheckBox>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_10sdp"
+                android:text="I have read and accept "/>
+
+            <TextView
+                android:id="@+id/tc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_3sdp"
+                android:text="T &amp; C"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="HardcodedText,RtlCompat" />
+
+            <TextView
+                android:id="@+id/andThe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_3sdp"
+
+                android:text="and the"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/tvPolicy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/mainColor"
+                android:text="Privacy Policy"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnMobileNext"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_selected_state"
+            android:text="Next"
+            android:onClick="@{vm::onSignIn}"
+            app:bindVisibility="@{!vm.isApiRunning.get()}"
+            android:textColor="@color/whiteColor" />
+
+        <ProgressBar
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:bindVisibility="@{vm.isApiRunning}" />
+
+
+
+    </RelativeLayout>
+
+
+
+</layout>

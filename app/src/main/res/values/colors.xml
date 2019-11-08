@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#696969</color>
+    <color name="colorAccent">#9b078b</color>
+    <color name="redbuttoncolor">#cc0000</color>
+    <color name="rederror">#abe43535</color>
+    <color name="green_success">#078307</color>
+
+
+    <color name="whiteColor">#fefefe</color>
+    <color name="dark_greycolor">#696969</color>
+
+
+    <color name="tab_unselected_color">#B3696969</color>
+
+    <color name="darker_greycolor">#3f3f3f</color>
+
+    <color name="light_greycolor">#ebebeb</color>
+    <color name="greycolor">#ebebeb</color>
+    <color name="lightgreycolor">#ebebeb</color>
+    <color name="light_color_text">#bebebe</color>
+    <color name="light_color_text_drawer">#696969</color>
+    <color name="mainColor">#9b078b</color>
+    <color name="blue">#01B6BD</color>
+
+
+    <color name="yellow">#FBB134</color>
+    <color name="black">#000000</color>
+    <color name="tabiconcolor">#E6E7E8</color>
+    <color name="android_blue">#33B5E5</color>
+    <color name="android_blue2">#4285f4</color>
+    <color name="android_blue_dark">#0099CC</color>
+    <color name="android_violet">#b293c1</color>
+    <color name="android_violet_dark">#9933CC</color>
+    <color name="violet">#411665</color>
+
+    <color name="android_green">#99CC00</color>
+    <color name="android_green_dark">#669900</color>
+    <color name="android_orange">#FFBB33</color>
+    <color name="android_orange_dark">#FF8800</color>
+    <color name="android_red">#FF4444</color>
+    <color name="android_red_dark">#CC0000</color>
+    <color name="facebook_blue">#3b5998</color>
+    <color name="google_red">#d95534</color>
+    <color name="com_facebook_share_button_text_color">#fefefe</color>
+
+    <color name="control_pressed">#acacac</color>
+    <color name="control_bg">#BBB7B7</color>
+
+</resources>
